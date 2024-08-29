@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Executavel.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ff79c6;}
+.s1 { color: #f8f8f2;}
+.s2 { color: #737fff;}
+.s3 { color: #fff906;}
+.s4 { color: #f1fa8c;}
+.s5 { color: #36ffac;}
+.s6 { color: #98afff;}
+</style>
+</head>
+<body bgcolor="#282a36">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Executavel.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.LinkedList;</span>
+<span class="s0">import </span><span class="s1">java.util.Queue;</span>
+
+<span class="s0">public class </span><span class="s1">Executavel </span><span class="s2">{</span>
+
+    <span class="s0">public static void </span><span class="s1">process</span><span class="s3">(</span><span class="s1">Queue&lt;String&gt; q, Queue&lt;String&gt; a, Queue&lt;String&gt; b</span><span class="s3">) </span><span class="s2">{</span>
+
+        <span class="s0">while </span><span class="s3">(</span><span class="s1">!q.isEmpty</span><span class="s3">()) </span><span class="s2">{</span>
+            <span class="s1">String nome = q.poll</span><span class="s3">()</span><span class="s1">;</span>
+            <span class="s1">String operacao = q.poll</span><span class="s3">()</span><span class="s1">;</span>
+
+            <span class="s0">switch </span><span class="s3">(</span><span class="s1">operacao</span><span class="s3">) </span><span class="s2">{</span>
+                <span class="s0">case </span><span class="s4">&quot;A&quot;</span><span class="s1">:</span>
+                    <span class="s1">a.add</span><span class="s3">(</span><span class="s1">nome</span><span class="s3">)</span><span class="s1">;</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+
+                <span class="s0">case </span><span class="s4">&quot;B&quot;</span><span class="s1">:</span>
+                    <span class="s1">b.add</span><span class="s3">(</span><span class="s1">nome</span><span class="s3">)</span><span class="s1">;</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+
+                <span class="s0">case </span><span class="s4">&quot;X&quot;</span><span class="s1">:</span>
+                    <span class="s0">if </span><span class="s3">(</span><span class="s1">a.size</span><span class="s3">() </span><span class="s1">&lt; b.size</span><span class="s3">()) </span><span class="s2">{</span>
+                        <span class="s1">a.add</span><span class="s3">(</span><span class="s1">nome</span><span class="s3">)</span><span class="s1">;</span>
+                    <span class="s2">} </span><span class="s0">else if </span><span class="s3">(</span><span class="s1">b.size</span><span class="s3">() </span><span class="s1">&lt; a.size</span><span class="s3">()) </span><span class="s2">{</span>
+                        <span class="s1">b.add</span><span class="s3">(</span><span class="s1">nome</span><span class="s3">)</span><span class="s1">;</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s3">(</span><span class="s1">String</span><span class="s5">[] </span><span class="s1">args</span><span class="s3">) </span><span class="s2">{</span>
+        <span class="s1">Queue&lt;String&gt; q = </span><span class="s0">new </span><span class="s1">LinkedList&lt;&gt;</span><span class="s3">()</span><span class="s1">;</span>
+        <span class="s1">Queue&lt;String&gt; a = </span><span class="s0">new </span><span class="s1">LinkedList&lt;&gt;</span><span class="s3">()</span><span class="s1">;</span>
+        <span class="s1">Queue&lt;String&gt; b = </span><span class="s0">new </span><span class="s1">LinkedList&lt;&gt;</span><span class="s3">()</span><span class="s1">;</span>
+
+        <span class="s6">// Adiciona os candidatos à fila q</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Luis&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;B&quot;</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Pedro&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;A&quot;</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Luisa&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;A&quot;</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Joao&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;X&quot;</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Jose&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;X&quot;</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">q.add</span><span class="s3">(</span><span class="s4">&quot;Miguel&quot;</span><span class="s3">)</span><span class="s1">; q.add</span><span class="s3">(</span><span class="s4">&quot;B&quot;</span><span class="s3">)</span><span class="s1">;</span>
+
+        <span class="s6">// Processando a fila q</span>
+        <span class="s1">process</span><span class="s3">(</span><span class="s1">q, a, b</span><span class="s3">)</span><span class="s1">;</span>
+
+        <span class="s6">// Mostra as filas finais</span>
+        <span class="s1">System.out.println</span><span class="s3">(</span><span class="s4">&quot;Fila A (Engenharia): &quot; </span><span class="s1">+ a</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">System.out.println</span><span class="s3">(</span><span class="s4">&quot;Fila B (Marketing): &quot; </span><span class="s1">+ b</span><span class="s3">)</span><span class="s1">;</span>
+        <span class="s1">System.out.println</span><span class="s3">(</span><span class="s4">&quot;Fila de Candidatos q: &quot; </span><span class="s1">+ q</span><span class="s3">)</span><span class="s1">;</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
