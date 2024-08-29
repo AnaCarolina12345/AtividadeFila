@@ -1,7 +1,7 @@
 public class Candidato {
 
     private String nome;
-    private String interesse;
+    private String operacao;
 
     public String getNome() {
         return nome;
@@ -11,18 +11,17 @@ public class Candidato {
         this.nome = nome;
     }
 
-    public String getInteresse() {
-        return interesse;
+    public String getoperacao() {
+        return operacao;
     }
 
-    public Candidato(String nome, String interesse) {
+    public Candidato(String nome, String operacao) {
         this.nome = nome;
-        this.interesse = interesse;
+        this.operacao = operacao;
     }
 
-    public void setInteresse(String interesse) {
-        this.interesse = interesse;
-
+    public void setoperacao(String operacao) {
+        this.operacao = operacao;
 
     }
 }
